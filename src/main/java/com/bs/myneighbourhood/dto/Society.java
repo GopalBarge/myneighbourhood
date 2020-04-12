@@ -5,7 +5,7 @@ public class Society {
     String name;
     String contactNumber;
     String contactPerson;
-    Address address;
+    String city;
 
     public Integer getId() {
         return id;
@@ -39,11 +39,11 @@ public class Society {
         this.contactPerson = contactPerson;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getCity() {
+        return city;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setCity(String city) {
+        this.city = city;
     }
 }

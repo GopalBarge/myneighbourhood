@@ -5,10 +5,7 @@ import com.bs.myneighbourhood.dto.Society;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("society")
@@ -23,11 +20,12 @@ public class SocietyController {
     }
 */
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Society> get(@PathVariable(value = "id") Integer id) {
-        return new ResponseEntity<Society>(service.getSocietyById(id), HttpStatus.OK);    }
-    @GetMapping("/add")
-    public ResponseEntity<Society> add() {
-        return new ResponseEntity<Society>(service.addSociety(), HttpStatus.OK);    }
+    @GetMapping("/{city}/{name}")
+    public ResponseEntity<Society> get(@PathVariable(value = "name") String name, @PathVariable(value = "city") String city) {
+        return new ResponseEntity<Society>(service.getSocietyByName(name,city), HttpStatus.OK);    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Society> add(@RequestBody Society society) {
+        return new ResponseEntity<Society>(service.addSociety(society), HttpStatus.OK);    }
 }
 
