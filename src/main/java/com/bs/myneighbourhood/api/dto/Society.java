@@ -1,17 +1,11 @@
-package com.bs.myneighbourhood.document;
+package com.bs.myneighbourhood.api.dto;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document("Society")
-public class SocietyDocument {
-
-    @Id
+public class Society {
     Integer id;
     String name;
     String contactNumber;
     String contactPerson;
-//    Address address;
+    Address address;
 
     public Integer getId() {
         return id;
@@ -45,11 +39,11 @@ public class SocietyDocument {
         this.contactPerson = contactPerson;
     }
 
-//    public Address getAddress() {
-//        return address;
-//    }
-//
-//    public void setAddress(Address address) {
-//        this.address = address;
-//    }
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }
