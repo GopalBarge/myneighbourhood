@@ -1,4 +1,4 @@
-package com.bs.myneighbourhood.dto;
+package com.bs.myneighbourhood.api.dto;
 
 public class Address {
     String address;
