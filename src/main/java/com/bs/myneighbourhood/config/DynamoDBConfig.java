@@ -7,6 +7,7 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+//import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
 import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,7 @@ import org.springframework.util.StringUtils;
 @EnableDynamoDBRepositories(basePackages = "com.bs.myneighbourhood.repository")
 public class DynamoDBConfig {
 
-//    @Value("${amazon.dynamodb.endpoint}")
+    //    @Value("${amazon.dynamodb.endpoint}")
     private String amazonDynamoDBEndpoint;
 
     @Value("${amazon.aws.accesskey}")
@@ -35,7 +36,7 @@ public class DynamoDBConfig {
         if (!StringUtils.isEmpty(amazonDynamoDBEndpoint)) {
             amazonDynamoDB.setEndpoint(amazonDynamoDBEndpoint);
         }
-amazonDynamoDB.setRegion(Region.getRegion(Regions.US_WEST_2));
+        amazonDynamoDB.setRegion(Region.getRegion(Regions.US_WEST_2));
         return amazonDynamoDB;
     }
 

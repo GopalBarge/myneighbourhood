@@ -37,6 +37,11 @@ dependencies {
 	compile 'com.amazonaws:aws-java-sdk-dynamodb:1.11.0'
 	compile 'com.github.derjust:spring-data-dynamodb:4.5.0'
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	// MapStruct support
+	compile group: 'org.mapstruct', name: 'mapstruct-jdk8', version: '1.2.0.Final'
+	compileOnly 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+	compileOnly ("org.projectlombok:lombok")
 }
 
 test {

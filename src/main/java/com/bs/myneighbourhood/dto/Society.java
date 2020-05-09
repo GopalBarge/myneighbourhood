@@ -1,11 +1,14 @@
 package com.bs.myneighbourhood.dto;
 
+
 public class Society {
-    Integer id;
-    String name;
-    String contactNumber;
-    String contactPerson;
-    String city;
+    private Integer id;
+    private String name;
+    private String contactNumber;
+    private String contactPerson;
+    private String address;
+    private String city;
+    private String pinCode;
 
     public Integer getId() {
         return id;
@@ -39,11 +42,27 @@ public class Society {
         this.contactPerson = contactPerson;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getCity() {
         return city;
     }
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
     }
 }
